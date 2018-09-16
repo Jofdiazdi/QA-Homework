@@ -11,11 +11,11 @@ class Test1 {
 
 	@Test
 	/*
-	Scenario: Sort the students according to their CGPA in decreasing order
-	Given I have a list of students
-	And they have ID, name and CGPA
-	When I sort them by CGPA
-	Then I should have a list of students order by their CGPA decreasingly
+	Scenario: I want to sort the students according to their CGPA in decreasing order
+		Given I have a list of students
+		And they have ID, name and CGPA
+		When I sort them by CGPA
+		Then I should have a list of students order by their CGPA decreasingly
 	*/
 	void NormalSortTest() {
 		//Set up
@@ -36,6 +36,15 @@ class Test1 {
 
 	}
 	@Test
+	/*
+	Scenario: I want to sort the students according to their CGPA ,in decreasing order, and alphabetical order
+	 	Given I have a list of students
+		And they have ID, name and CGPA
+		When I sort them by CGPA
+		And if they have the same CGPA, alphabeticaly
+		Then I should have a list of students order by their CGPA decreasingly
+		And alphabetical order 
+	*/
 	void EqualCgpaSortTest() {
 		//Set up
 		List<Student> experimentalResult;
@@ -73,6 +82,5 @@ class Test1 {
 		assertEquals(spectedResult,experimentalResult);
 
 	}
-
 
 }
