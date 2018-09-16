@@ -21,9 +21,36 @@ class Student{
 	}
 }
 
+class ComparatorStudents implements Comparator<Student>{
+
+	@Override
+	public int compare(Student student1, Student student2) {
+		if(student1.getCgpa()<student2.getCgpa()) {
+			return 1;
+		}else if(student1.getCgpa()>student2.getCgpa()) {
+			return -1;
+		}else {
+			int isEqual = student1.getFname().compareTo(student2.getFname());
+			if( isEqual == 0) {
+				if(student1.getId()<student2.getId()) {
+					return -1;
+				}else {
+					return 1;
+				}
+			}else {
+				return isEqual;
+			}
+		}
+	}
+	
+}
+
 //Complete the code
 public class Solution
 {
+	public Scanner in;
+	public int testCases;
+	
 	public static void main(String[] args){
 		Scanner in = new Scanner(System.in);
 		int testCases = Integer.parseInt(in.nextLine());
@@ -39,9 +66,19 @@ public class Solution
 			
 			testCases--;
 		}
-      
-      	for(Student st: studentList){
+		
+		List<Student> result = SortStudents(studentList);
+		
+		for(Student st: result){
 			System.out.println(st.getFname());
 		}
+      
+      	
+	}
+
+	public static  List<Student> SortStudents(List<Student> studentList) {
+		List<Student> result = studentList;
+		Collections.sort(result, new ComparatorStudents());
+		return result;
 	}
 }
