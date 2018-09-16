@@ -37,13 +37,13 @@ class Test1 {
 	}
 	@Test
 	/*
-	Scenario: I want to sort the students according to their CGPA ,in decreasing order, and alphabetical order
+	Scenario: I want to sort the students according to their CGPA ,in decreasing order, and alphabetical order by name
 	 	Given I have a list of students
 		And they have ID, name and CGPA
 		When I sort them by CGPA
-		And if they have the same CGPA, alphabeticaly
+		And if they have the same CGPA, alphabeticaly by name
 		Then I should have a list of students order by their CGPA decreasingly
-		And alphabetical order 
+		And alphabetical order by name
 	*/
 	void EqualCgpaSortTest() {
 		//Set up
@@ -64,6 +64,17 @@ class Test1 {
 
 	}
 	@Test
+	/*
+	Scenario: I want to sort the students according to their CGPA, decreasingly, by name, alphabeticaly and by ID in increasing order
+		Given I have a list of students
+		And they have ID, name, and CGPA
+		When I sort them by CGPA
+		And if they have the same CGPA, alphabeticaly by name
+		And if they have the same name, in increasing order by ID
+		Then I should have a list of students order by their CGPA decreasingly
+		And alphabetical order by name
+		And in increasing order by ID
+	*/
 	void EqualNameSortTest() {
 		//Set up
 		List<Student> experimentalResult;
