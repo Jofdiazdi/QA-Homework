@@ -10,6 +10,13 @@ import org.junit.jupiter.api.Test;
 class Test1 {
 
 	@Test
+	/*
+	Scenario: Sort the students according to their CGPA in decreasing order
+	Given I have a list of students
+	And they have ID, name and CGPA
+	When I sort them by CGPA
+	Then I should have a list of students order by their CGPA decreasingly
+	*/
 	void NormalSortTest() {
 		//Set up
 		List<Student> experimentalResult;
@@ -20,13 +27,13 @@ class Test1 {
 		Student s5 = new Student(22, "Fahim", 3.76);
 		List<Student> input = Arrays.asList(s1,s2,s3,s4,s5);
 		List<Student> spectedResult = Arrays.asList(s4,s2,s5,s3,s1);
-		
+
 		//arrange
 		experimentalResult = Solution.SortStudents(input);
-		
+
 		//assert
 		assertEquals(spectedResult,experimentalResult);
-		
+
 	}
 	@Test
 	void EqualCgpaSortTest() {
@@ -39,13 +46,13 @@ class Test1 {
 		Student s5 = new Student(22, "Fahim", 3.76);
 		List<Student> input = Arrays.asList(s1,s2,s3,s4,s5);
 		List<Student> spectedResult = Arrays.asList(s2,s5,s4,s3,s1);
-		
+
 		//arrange
 		experimentalResult = Solution.SortStudents(input);
-		
+
 		//assert
 		assertEquals(spectedResult,experimentalResult);
-		
+
 	}
 	@Test
 	void EqualNameSortTest() {
@@ -58,13 +65,13 @@ class Test1 {
 		Student s5 = new Student(22, "Fahim", 3.76);
 		List<Student> input = Arrays.asList(s1,s2,s3,s4,s5);
 		List<Student> spectedResult = Arrays.asList(s2,s5,s4,s3,s1);
-		
+
 		//arrange
 		experimentalResult = Solution.SortStudents(input);
-		
+
 		//assert
 		assertEquals(spectedResult,experimentalResult);
-		
+
 	}
 
 
