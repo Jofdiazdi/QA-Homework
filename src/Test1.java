@@ -7,6 +7,13 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
+/*
+Feature: Sort of students
+	The students should be sorted by their CGPA, in case of equal CGPA they should
+	be sorted by name alphabeticaly, and in case of they have equal names they
+	should be sorted by ID, ID's are never equal to another.
+*/
+
 class Test1 {
 
 	@Test
